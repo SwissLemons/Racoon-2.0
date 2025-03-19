@@ -18,7 +18,6 @@ public class ProdutoService {
 
     public Produto criarProduto(String codigo, String nome, String descricao, String deposito, 
     		MultipartFile imagem, Double custo, Double valor) throws Exception {
-    	System.out.println(2);
         if (codigo == null || codigo.trim().isEmpty()) {
             throw new IllegalArgumentException("Produto deve conter um código valido.");
         }
@@ -35,21 +34,20 @@ public class ProdutoService {
             throw new IllegalArgumentException("Produto deve conter um deposito valido.");
         }
         
-        if (custo == null || custo == 0) {
+        if (custo == null || custo < 0) {
             throw new IllegalArgumentException("Produto deve conter um custo valido.");
         }
         
-        if (valor == null || valor == 0) {
+        if (valor == null || valor < 0) {
             throw new IllegalArgumentException("Produto deve conter um valor valido.");
         }
-        System.out.println(3);
+        
         Blob imageBlob;
 		try {
 		    imageBlob = new SerialBlob(imagem.getBytes());
 		}catch (Exception e) {
 		    throw new IOException("Erro ao converter imagem para Blob ", e);
 		}
-		System.out.println(4);
         Produto novoProduto = new Produto(
         		codigo,
         		nome,
@@ -60,7 +58,6 @@ public class ProdutoService {
                 valor
         );
 
-        System.out.println(5);
         return produtoRepository.save(novoProduto);
     }
 }

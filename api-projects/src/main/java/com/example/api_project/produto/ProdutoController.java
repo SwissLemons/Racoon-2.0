@@ -38,7 +38,6 @@ public class ProdutoController {
             ) {
 
         try {
-        	System.out.println(1);
             Produto novoProduto = service.criarProduto(codigo, nome, descricao, deposito, imagem, custo,
             		valor); 
             System.out.println(novoProduto);

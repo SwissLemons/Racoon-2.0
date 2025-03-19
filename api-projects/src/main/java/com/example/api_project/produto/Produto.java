@@ -1,4 +1,4 @@
-	package com.example.api_project.produto;
+package com.example.api_project.produto;
 import java.sql.Blob;
 import java.sql.Date;
 import jakarta.persistence.Column;
