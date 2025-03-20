@@ -45,8 +45,8 @@ public class Cliente {
     @Column(name = "rua", nullable = false)
     private String rua;
     
-    @Column(name = "n", nullable = false)
-    private int n;
+    @Column(name = "numero", nullable = false)
+    private int numero;
     
     @Column(name = "complemento", nullable = false)
     private String complemento;
@@ -66,7 +66,7 @@ public class Cliente {
                    String cidade,
                    String bairro,
                    String rua,
-                   int n,
+                   Integer numero,
                    String complemento,
                    Clob observacao
                    ) {
@@ -79,7 +79,7 @@ public class Cliente {
         this.cidade = cidade;
         this.bairro = bairro;
         this.rua = rua;
-        this.n = n;
+        this.numero = numero;
         this.complemento = complemento;
         this.observacao = observacao;
     }
@@ -144,11 +144,11 @@ public class Cliente {
 	public void setRua(String rua) {
 		this.rua = rua;
 	}
-	public int getN() {
-		return n;
+	public Integer getNumero() {
+		return numero;
 	}
-	public void setN(int n) {
-		this.n = n;
+	public void setNumero(Integer numero) {
+		this.numero = numero;
 	}
 	public String getComplemento() {
 		return complemento;

@@ -37,14 +37,14 @@ public class ClienteController {
     		@RequestParam("cidade") String cidade,
     		@RequestParam("bairo") String bairro,
     		@RequestParam("rua") String rua,
-    		@RequestParam("n") int n,
+    		@RequestParam("numero") Integer numero,
     		@RequestParam("complemento") String complemento,
     		@RequestParam("observacao") Clob observacao
             ) {
 
         try {
             Cliente novoCliente = service.criarCliente(nome, cnpj, telefone, email, regimeTributario, 
-            		cep, cidade, bairro, rua, n, complemento, observacao); 
+            		cep, cidade, bairro, rua, numero, complemento, observacao); 
             System.out.println(novoCliente);
             return ResponseEntity.status(201).body(novoCliente);
         } catch (IllegalArgumentException e) {
